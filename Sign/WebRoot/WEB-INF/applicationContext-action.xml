@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    
+    <bean id="leafletAction" class="cn.edu.ccnu.imd.analysis.action.LeafletAction">
+	    <property name="service">
+		  		<ref bean="dwrLeafletService" />
+		  	</property>
+  	</bean>	
+  	 <bean id="userAction" class="cn.edu.ccnu.imd.analysis.action.UserAction">
+  	 	<property name="userService">
+  	 		<ref bean="dwrUserService"/>
+  	 	</property>
+  	</bean>	
+  	<bean id="logAction" class="cn.edu.ccnu.imd.analysis.action.LogAction">
+  	</bean>	
+  	<bean id="picAction" class="cn.edu.ccnu.imd.analysis.action.PicAction">
+  		<property name="service">
+	  		<ref bean="dwrPicService" />
+	  	</property>
+  	</bean>	
+  	<bean id="loginAction" class="cn.edu.ccnu.imd.analysis.action.LoginAction">
+	  	<property name="service">
+	  		<ref bean="loginService" />
+	  	</property>
+  	</bean>	
+  	<bean id="consumerAction" class="cn.edu.ccnu.imd.analysis.action.ConsumerAction">
+  		<property name="consumerService">
+		  		<ref bean="dwrConsumerService" />
+	    </property>
+  	</bean>	
+  	<bean id="seatAction" class="cn.edu.ccnu.imd.analysis.action.SeatAction">
+  	</bean>	
+  	<bean id="seatReportAction" class="cn.edu.ccnu.imd.analysis.action.SeatReportAction">
+  		<property name="seatReportervice">
+		  		<ref bean="seatReportervice" />
+	    </property>
+  	</bean>	
+   
+ </beans>

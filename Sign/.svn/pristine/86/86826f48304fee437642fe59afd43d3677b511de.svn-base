@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+   
+  <bean id="dwrLeafletService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.DWRServiceImpl">
+        <property name="dao"><ref bean="leafletDao" /></property>
+      </bean>
+    </property>
+  </bean>
+  
+  <bean id="dwrUserService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.UserServiceImpl">
+        <property name="dao"><ref bean="userDao" /></property>
+      </bean>
+    </property>
+  </bean>
+  
+  <bean id="dwrLogService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.LogServiceImpl">
+        <property name="dao"><ref bean="logDao" /></property>
+      </bean>
+    </property>
+  </bean>
+  
+  <bean id="dwrPicService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.PicServiceImpl">
+        <property name="dao"><ref bean="picDao" /></property>
+      </bean>
+    </property>
+  </bean>
+ 
+  <bean id="dwr_uuid" class="cn.edu.ccnu.imd.analysis.common.util.UUIDBuilderUtil"/>
+  
+  <bean id="loginService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.BasicServiceImpl">
+        <property name="dao"><ref bean="loginDao" /></property>
+      </bean>
+    </property>
+  </bean>
+   
+  <bean id="dwrConsumerService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.ConsumerServiceImpl">
+        <property name="dao"><ref bean="consumerDao" /></property>
+        <property name="SeatDao"><ref bean = "seatDao2"/></property>
+      </bean>
+    </property>
+  </bean> 
+  
+  <bean id="dwrSeatService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.SeatServiceImpl">
+        <property name="dao"><ref bean="seatDao" /></property>
+        <property name="SeatDao"><ref bean = "seatDao2"/></property>
+      </bean>
+    </property>
+  </bean> 
+  <bean id="dwrSeatReportService" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.SeatReportServiceImpl">
+        <property name="dao"><ref bean="seatReportDao" /></property>
+      </bean>
+    </property>
+  </bean> 
+  
+  <bean id="seatReportervice" parent="txProxyTemplate">
+    <property name="target">
+      <bean class="cn.edu.ccnu.imd.analysis.service.impl.SeatReportServiceImpl">
+        <property name="dao"><ref bean="seatReportDao" /></property>
+      </bean>
+    </property>
+  </bean> 
+</beans>

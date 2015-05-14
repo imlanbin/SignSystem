@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Sign"
+  id="myeclipse.1362883999568"
+  context-root="/Sign"
+  j2ee-spec="6.0"
+  archive="Sign.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

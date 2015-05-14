@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	  <constant name="struts.objectFactory" value="spring" /> 
+	  <include file="struts-default.xml"/>
+       <package name="Medicine" namespace="/admin/leaflet" extends="struts-default,json-default">
+           <action name="medicineList"  class="leafletAction" method="jsp">
+               <result>/WEB-INF/jsp/analysis/MedicineList.jsp</result>
+           </action>
+           <action name="medicineListS"  class="leafletAction" method="jsp">
+               <result>/WEB-INF/jsp/analysis/MedicineListS.jsp</result>
+           </action>
+           <action name="mission"  class="termAction" method="missionList">
+               <result>/WEB-INF/jsp/analysis/MyJsp.jsp</result>
+           </action>
+           
+           <action name="userList"  class="userAction" method="jsp">
+               <result>/WEB-INF/jsp/analysis/UserList.jsp</result>
+           </action>
+           
+    		<action name="logList"  class="logAction" method="jsp">
+               <result>/WEB-INF/jsp/analysis/LogList.jsp</result>
+           </action>
+    		
+
+           
+       </package> 
+        
+        <package name="login" namespace="/leaflet" extends="struts-default">
+        <!-- 管理员登录action-->
+           <action name="login" class="loginAction" method="login">
+               <result name="yes">/WEB-INF/jsp/analysis/index.jsp</result>
+               <result name="no">/error.jsp</result>
+           </action>
+        </package>
+        
+        <package name="json" namespace="/json"    extends="struts-default,json-default">
+       	   <!-- 用户登录 -->
+           <action name="login"  class="loginAction" method="jsonlogin">
+               <result    type="json"  >
+               		<param name="callbackParameter">callback</param>
+               		<param name="includeProperties">state,user.*</param>
+               </result> 
+           </action>
+           
+           <action name="search"  class="leafletAction" method="search">
+               <result    type="json"  >
+               		<param name="callbackParameter">callback</param>
+               		<param name="includeProperties">mapLeaflet.*,stauts</param>
+               </result> 
+           </action>
+           
+            <action name="searchPic"  class="picAction" method="searchPic">
+               <result    type="json"  >
+               		<param name="callbackParameter">callback</param>
+               		<param name="includeProperties">mapPic.*,stauts</param>
+               </result> 
+           </action>
+         </package>
+        
+       
+        
+</struts>    

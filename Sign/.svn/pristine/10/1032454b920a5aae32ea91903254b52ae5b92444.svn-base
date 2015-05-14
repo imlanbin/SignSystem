@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    <bean id="leafletDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Leaflet</value>
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="loginDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.User</value>	
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="logDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Log</value>	
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="picDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Pic</value>	
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="userDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.User</value>
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="consumerDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Consumer</value>
+	  	</property>
+  	</bean>	
+  	<bean id="seatDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Seat</value>
+	  	</property>
+  	</bean>	
+  	
+  	<bean id="seatDao2" class="cn.edu.ccnu.imd.analysis.dao.impl.SeatDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.Seat</value>
+	  	</property>
+  	</bean>
+  	
+  	<bean id="seatReportDao" class="cn.edu.ccnu.imd.analysis.dao.impl.BasicDaoImpl">
+	  	<property name="sessionFactory">
+	  		<ref bean="sessionFactory" />
+	  	</property>
+	  	<property name="className">
+	  		<value>cn.edu.ccnu.imd.analysis.vo.SeatReport</value>
+	  	</property>
+  	</bean>	
+</beans>
+	
